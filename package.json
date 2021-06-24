@@ -48,7 +48,7 @@
     "diff": "^3.3.0",
     "immutable": "^3.8.1",
     "katex": "^0.7.1",
-    "lodash": "4.17.2",
+    "lodash": "4.17.21",
     "mousetrap": "^1.6.0",
     "ng2-slide-toggle": "^1.0.0",
     "ngx-bootstrap": "2.0.0-beta.7"
