@@ -299,7 +299,7 @@ describe('JsonStoreService', () => {
     service.rollbackLastChange();
   });
 
-  it('shoul set json patches and group them by path', () => {
+  it('should set json patches and group them by path', () => {
     const patches = [
       {
         path: '/p/1',
@@ -343,7 +343,7 @@ describe('JsonStoreService', () => {
     service.setJsonPatches(patches);
   });
 
-  it('shoul return true for parent if a child has a patch', () => {
+  it('should return true for parent if a child has a patch', () => {
     const patches = [
       {
         path: '/parent/children/0',
@@ -359,7 +359,7 @@ describe('JsonStoreService', () => {
     expect(service.hasPatchOrChildrenHavePatch('/parent')).toBe(true);
   });
 
-  it('shoul return true for parent if it has a patch', () => {
+  it('should return true for parent if it has a patch', () => {
     const patches = [
       {
         path: '/parent',
@@ -375,13 +375,19 @@ describe('JsonStoreService', () => {
     expect(service.hasPatchOrChildrenHavePatch('/parent')).toBe(true);
   });
 
-  it('shoul return false for parent if it or a child does not have a patch', () => {
+  it('should return false for parent if it or a child does not have a patch', () => {
     const patches = [
       {
         path: '/other/thing',
         op: 'remove'
       }
     ];
+    service.setJsonPatches(patches);
+    expect(service.hasPatchOrChildrenHavePatch('/parent')).toBe(false);
+  });
+
+  it('should return false if patch is undefiled', () => {
+    const patches = undefined;
     service.setJsonPatches(patches);
     expect(service.hasPatchOrChildrenHavePatch('/parent')).toBe(false);
   });
