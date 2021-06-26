@@ -4,6 +4,9 @@ import { CustomShortcutKeys } from './custom-shortcut-keys';
 import { TabsConfig } from './tabs-config';
 import { CustomFormatValidation } from './custom-format-validation';
 
+// HACK for docs
+import '../../rxjs-operators';
+
 export interface JsonEditorConfig {
   /**
    * If set, displays the switch that can enable admin mode where any field can be edited.

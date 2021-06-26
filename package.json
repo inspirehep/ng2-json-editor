@@ -30,7 +30,7 @@
     "copy": "copyfiles LICENSE README.md package.json dist",
     "postversion": "git push upstream && git push upstream --tags",
     "coveralls": "cat coverage/coverage.lcov | coveralls",
-    "typedoc": "typedoc --readme none --theme ./docs-theme --module commonjs --out ./example-dist/docs --tsconfig ./src/shared/interfaces/tsconfig.json ."
+    "typedoc": "cd ./src/shared/interfaces && typedoc --readme none --theme ../../../docs-theme --module commonjs --out ../../../example-dist/docs --tsconfig ./tsconfig.json ./json-editor-config.ts"
   },
   "peerDependencies": {
     "@angular/common": "^4.0.0",
@@ -99,7 +99,7 @@
     "ts-helpers": "^1.1.1",
     "ts-node": "1.2.1",
     "tslint": "^5.0.0",
-    "typedoc": "^0.5.5",
+    "typedoc": "0.9.0",
     "typescript": "~2.3.0",
     "util-deprecate": "^1.0.2",
     "zone.js": "^0.8.4"
